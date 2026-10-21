@@ -1,0 +1,29 @@
+{
+  "name": "hono-bun-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "module": "src/index.ts",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun run dist/index.js",
+    "cli": "bun run cli/index.ts",
+    "build" : "bun --env-file=.env build ./src/index.ts --outdir ./dist --target=bun",
+    "test:services": "bun test .service",
+    "make:migration": "bun run cli/index.ts make:migration",
+    "make:seeder": "bun run cli/index.ts make:seeder",
+    "migrate": "bun run cli/index.ts migrate",
+    "migrate:rollback": "bun run cli/index.ts migrate:rollback",
+    "migrate:fresh": "bun run cli/index.ts migrate:fresh",
+    "migrate:status": "bun run cli/index.ts migrate:status",
+    "db:seed": "bun run cli/index.ts db:seed"
+  },
+  "dependencies": {
+    "hono": "^4.6.14",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.6.0"
+  }
+}
